@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="1.0"
+    package="cntt.tlcn.spkdict">
+
+    <uses-sdk android:minSdkVersion="3" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name">
+        <activity
+            android:name=".SpkdictActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name=".provider.SpkdictProvider"
+            android:authorities="cntt.tlcn.spkdict.SpkdictProvider"></provider>
+
+        <activity
+            android:name=".Help"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name="cntt.tlcn.spkdict.ShowContent"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name=".Setting"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name=".History"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name=".AddWord"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".EditWord"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".About"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+        <activity
+            android:name="cntt.tlcn.spkdict.Favorites"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+        </activity>
+    </application>
+</manifest>

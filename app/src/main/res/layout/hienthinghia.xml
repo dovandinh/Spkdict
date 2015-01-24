@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:background="@drawable/bg">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:layout_height="34dp">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:id="@+id/hienthidemuc"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="true"
+            android:textSize="25dp"></TextView>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:id="@+id/btnamthanh"
+            android:background="@drawable/andoridbuttonspeaker"></ImageButton>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="34dp"
+        android:layout_weight="0.94"
+        android:gravity="left"
+        android:orientation="horizontal">
+
+        <WebView
+            android:id="@+id/webView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </WebView>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btntroloai"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.99"
+            android:background="@drawable/androidbuttonbackview" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.84"
+            android:background="@drawable/androidbuttonhistory" />
+
+        <ImageButton
+            android:id="@+id/btnaddbookmack"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.96"
+            android:background="@drawable/andoridbuttonadd" />
+
+    </LinearLayout>
+
+</LinearLayout>

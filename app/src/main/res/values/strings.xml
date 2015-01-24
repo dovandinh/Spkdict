@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, SpkdictActivity!</string>
+    <string name="app_name">My dict</string>
+    <string name="duongdan">/sdcard/Spkdict/db/anh_viet/anh_viet.db</string>
+    <string name="LoiKhongThayTu">Không tìm thấy từ: </string>
+</resources>

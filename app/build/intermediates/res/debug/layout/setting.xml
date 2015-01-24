@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setting"
+        android:textSize="30dp"
+        android:textColor="#ffffff"
+        android:gravity="center"></TextView>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Music"
+        android:textSize="20dp"></CheckBox>
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="History"></CheckBox>
+
+    <Spinner
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner1"
+        android:layout_width="178dp"></Spinner>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Font size"
+        android:textSize="20dp"></TextView>
+
+    <SeekBar
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar1"
+        android:layout_width="292dp"></SeekBar>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_height="wrap_content"
+            android:layout_width="92dp"
+            android:text="OK"></Button>
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/layout/setting.xml -->
