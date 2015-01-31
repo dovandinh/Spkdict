@@ -3,4 +3,4 @@
     <item android:drawable="@drawable/buttonclear" android:state_pressed="true" />
     <item android:drawable="@drawable/buttonclear" android:state_focused="true" />
     <item android:drawable="@drawable/buttonback2" />
-</selector><!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/drawable/androidbuttonclear.xml -->
+</selector><!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/drawable/androidbuttonclear.xml -->

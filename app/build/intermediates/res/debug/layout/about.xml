@@ -4,6 +4,4 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/about">
-
-
-</LinearLayout><!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/layout/about.xml -->
+</LinearLayout><!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/layout/about.xml -->

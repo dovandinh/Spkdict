@@ -7,9 +7,12 @@ import cntt.tlcn.spkdict.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -18,7 +21,9 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class History extends Activity {
 
@@ -29,6 +34,10 @@ public class History extends Activity {
     private ArrayList<Integer> lstId = null;
     private ArrayAdapter<String> aptList = null;
 
+    public ArrayList<String> mLSTCurrentWord = null;
+
+
+
     private ArrayList<String> mWordHistory = null;
 
     private ImageButton btnxoa;
@@ -36,6 +45,13 @@ public class History extends Activity {
 
     private SharedPreferences prefs;
     static final private int SHOW_CONTENT_CODE = 1;
+
+    ListView lv;
+    Context context;
+    String mauTextTheoChuDe = "";
+
+    LinearLayout theme;
+    TextView textviewHistory;
 
 
     @Override
@@ -47,6 +63,33 @@ public class History extends Activity {
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        context=this;
+
+        theme = (LinearLayout) findViewById(R.id.backGroundHistory);
+        textviewHistory = (TextView)findViewById(R.id.textViewHistory);
+
+        String loaichudetheme = prefs.getString("loaichude", "").toString();
+        if (loaichudetheme.equals("White")) {
+            mauTextTheoChuDe = "WHITE";
+            theme.setBackgroundResource(R.drawable.bg_white);
+            textviewHistory.setTextColor(Color.BLUE);
+        } else if(loaichudetheme.equals("Pink")){
+
+            mauTextTheoChuDe = "PINK";
+            theme.setBackgroundResource(R.drawable.bg_pink);
+            textviewHistory.setTextColor(Color.BLUE);
+        }
+        else if(loaichudetheme.equals("Love")){
+
+            mauTextTheoChuDe = "LOVE";
+            theme.setBackgroundResource(R.drawable.bg_love);
+            textviewHistory.setTextColor(Color.BLUE);
+        }
+        else {
+            mauTextTheoChuDe = "BLACK";
+            theme.setBackgroundResource(R.drawable.bg);
+            textviewHistory.setTextColor(Color.WHITE);
+        }
 
         //// lay gia tri re luu trong bo nho may
         String strHistory = prefs.getString("history", "");
@@ -63,8 +106,11 @@ public class History extends Activity {
         aptList = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1);
         lstId = new ArrayList<Integer>();
 
+        mLSTCurrentWord = new ArrayList<String>();
+
         lstId.clear();
         aptList.clear();
+        mLSTCurrentWord.clear();
         //----------------
         if (mWordHistory != null && mWordHistory.size() > 0) {
             try {
@@ -74,6 +120,7 @@ public class History extends Activity {
                     if (arrPart.length == 2) {
                         lstId.add(i, Integer.parseInt(arrPart[0]));
                         aptList.add(arrPart[1]);
+                        mLSTCurrentWord.add(i, arrPart[1]);
                     } else {
                         Log.i(HISTORY_TAG, "Wrong entry: " + mWordHistory.get(i));
                     }
@@ -83,7 +130,22 @@ public class History extends Activity {
             }
         }
 
-        mLSTHistory.setAdapter(aptList);
+       // mLSTHistory.setAdapter(aptList);
+        lv=(ListView) findViewById(R.id.lstHistory);
+        lv.setAdapter(new CustomListviewAdapter(this, mLSTCurrentWord,  mauTextTheoChuDe));
+
+        if (loaichudetheme.equals("White")) {
+            lv.setDivider(new ColorDrawable(Color.parseColor("#E6E6E6")));
+        } else if(loaichudetheme.equals("Pink")){
+            lv.setDivider(new ColorDrawable(Color.parseColor("#FFD1FF")));
+        }
+        else if(loaichudetheme.equals("Love")){
+            lv.setDivider(new ColorDrawable(Color.parseColor("#FF6699")));
+        }
+        else {
+            lv.setDivider(new ColorDrawable(Color.parseColor("#000A00")));
+        }
+        lv.setDividerHeight(1);
 
 
         mLSTHistory.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -3,25 +3,41 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/backGroundHistory"
     android:background="@drawable/bg">
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
     <TextView
         android:textColor="#ffffff"
         android:textSize="30dp"
         android:text="History"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1"
+        android:id="@+id/textViewHistory"
         android:layout_width="match_parent"
         android:gravity="center"></TextView>
 
+     </LinearLayout>
     <ListView
-        android:id="@+id/lstHistory"
         android:layout_width="match_parent"
-        android:layout_height="392dp"></ListView>
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.94"
+        android:id="@+id/lstHistory"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="true"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true"
+        android:focusable="false"
+        android:cacheColorHint="@android:color/transparent"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -29,17 +45,16 @@
             android:id="@+id/btnback2"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_weight="0.55"
+            android:layout_weight="0.99"
             android:background="@drawable/buttonback" />
 
         <ImageButton
             android:id="@+id/btndelete"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_weight="0.52"
+            android:layout_weight="0.84"
             android:background="@drawable/androidbuttonclear" />
-
     </LinearLayout>
 
 </LinearLayout>
-<!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/layout/history.xml -->
+<!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/layout/history.xml -->

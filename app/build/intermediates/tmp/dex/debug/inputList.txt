@@ -1,1 +1,1 @@
-C:\Users\sakura\AndroidStudioProjects\Spkdict\app\build\intermediates\classes\debug
+E:\ANDROID\Spkdict\app\build\intermediates\classes\debug

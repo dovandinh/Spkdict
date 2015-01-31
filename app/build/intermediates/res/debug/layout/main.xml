@@ -22,7 +22,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearLayout2"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -41,7 +41,7 @@
             android:layout_height="fill_parent"
             android:src="@drawable/mouse"
             android:layout_width="wrap_content"
-            android:id="@+id/btnHienThiNghia"></ImageButton>
+            android:id="@+id/btnConChuot"></ImageButton>
 
     </LinearLayout>
 
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1.10"
+        android:layout_weight="0.94"
         android:id="@+id/lstWord"
         android:drawSelectorOnTop="false"
         android:fastScrollEnabled="true"
@@ -58,5 +58,37 @@
         android:focusable="false"
         android:cacheColorHint="@android:color/transparent"/>
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnthaydoitheme"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.99"
+            android:background="@drawable/theme_home_icon" />
+
+        <ImageButton
+            android:id="@+id/btnHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.84"
+            android:background="@drawable/history_home_icon" />
+
+        <ImageButton
+            android:id="@+id/btnfavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.96"
+            android:background="@drawable/bookmark_home_icon"
+            android:clickable="false"
+            android:adjustViewBounds="false" />
+
+    </LinearLayout>
+
 </LinearLayout>
-<!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/layout/main.xml -->
+<!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/layout/main.xml -->

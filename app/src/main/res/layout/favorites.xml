@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    android:orientation="vertical">
+    android:id="@+id/backGroundFavarites"
+    android:background="@drawable/bg">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Favorites"
-        android:textColor="#ffffff"
-        android:textSize="30dp"></TextView>
-
-    <ListView
-        android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:orientation="horizontal">
+        <TextView
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            android:text="Favorites"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewFavorites"
+            android:layout_width="match_parent"
+            android:gravity="center"></TextView>
 
-    </ListView>
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.94"
+        android:id="@+id/listView1"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="true"
+        android:headerDividersEnabled="true"
+        android:footerDividersEnabled="true"
+        android:focusable="false"
+        android:cacheColorHint="@android:color/transparent"/>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -31,14 +45,14 @@
             android:id="@+id/btnback2"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_weight="0.2"
+            android:layout_weight="0.99"
             android:background="@drawable/buttonback" />
 
         <ImageButton
             android:id="@+id/btndeletetatca"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:layout_weight="0.19"
+            android:layout_weight="0.84"
             android:background="@drawable/androidbuttonclear" />
     </LinearLayout>
 

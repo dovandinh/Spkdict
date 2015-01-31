@@ -3,4 +3,4 @@
     <item android:drawable="@drawable/history2" android:state_pressed="true" />
     <item android:drawable="@drawable/history2" android:state_focused="true" />
     <item android:drawable="@drawable/history1" />
-</selector><!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/drawable/androidbuttonhistory.xml -->
+</selector><!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/drawable/androidbuttonhistory.xml -->

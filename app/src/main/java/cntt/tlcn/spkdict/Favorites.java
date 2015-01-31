@@ -8,9 +8,12 @@ import cntt.tlcn.spkdict.R;
 import android.R.bool;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -19,7 +22,9 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Favorites extends Activity {
@@ -27,6 +32,8 @@ public class Favorites extends Activity {
     private ListView mLSTBookmack = null;
     private ArrayList<String> lstDict = null;
     private ArrayList<Integer> lstId = null;
+
+    public ArrayList<String> mLSTCurrentWord = null;
 
     private ImageButton btndeleteAll;
     private ImageButton btnback;
@@ -38,6 +45,12 @@ public class Favorites extends Activity {
     static final private int SHOW_CONTENT_CODE = 1;
     private SharedPreferences prefs;
 
+    ListView lv;
+    Context context;
+    String mauTextTheoChuDe = "";
+
+    LinearLayout theme;
+    TextView textviewFavortites;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +61,34 @@ public class Favorites extends Activity {
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+
+        context=this;
+
+        theme = (LinearLayout) findViewById(R.id.backGroundFavarites);
+        textviewFavortites = (TextView)findViewById(R.id.textViewFavorites);
+
+        String loaichudetheme = prefs.getString("loaichude", "").toString();
+        if (loaichudetheme.equals("White")) {
+            mauTextTheoChuDe = "WHITE";
+            theme.setBackgroundResource(R.drawable.bg_white);
+            textviewFavortites.setTextColor(Color.BLUE);
+        } else if(loaichudetheme.equals("Pink")){
+
+            mauTextTheoChuDe = "PINK";
+            theme.setBackgroundResource(R.drawable.bg_pink);
+            textviewFavortites.setTextColor(Color.BLUE);
+        }
+        else if(loaichudetheme.equals("Love")){
+
+            mauTextTheoChuDe = "LOVVE";
+            theme.setBackgroundResource(R.drawable.bg_love);
+            textviewFavortites.setTextColor(Color.BLUE);
+        }
+        else {
+            mauTextTheoChuDe = "BLACK";
+            theme.setBackgroundResource(R.drawable.bg);
+            textviewFavortites.setTextColor(Color.WHITE);
+        }
 
         btndeleteAll = (ImageButton) findViewById(R.id.btndeletetatca);
         btndeleteAll.setOnClickListener(new OnClickListener() {
@@ -74,9 +115,11 @@ public class Favorites extends Activity {
         lstId = new ArrayList<Integer>();
         aptList = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1);
         lstId = new ArrayList<Integer>();
+        mLSTCurrentWord = new ArrayList<String>();
 
         lstId.clear();
         aptList.clear();
+        mLSTCurrentWord.clear();
 
         //----------------
         if (mWordBookmack != null && mWordBookmack.size() > 0) {
@@ -87,6 +130,7 @@ public class Favorites extends Activity {
                     if (arrPart.length == 2) {
                         lstId.add(i, Integer.parseInt(arrPart[0]));
                         aptList.add(arrPart[1]);
+                        mLSTCurrentWord.add(i, arrPart[1]);
                     } else {
                         Log.i(BOOKMACK_TAG, "Wrong entry: " + mWordBookmack.get(i));
                     }
@@ -96,7 +140,21 @@ public class Favorites extends Activity {
             }
         }
 
-        mLSTBookmack.setAdapter(aptList);
+        //mLSTBookmack.setAdapter(aptList);
+        lv=(ListView) findViewById(R.id.listView1);
+        lv.setAdapter(new CustomListviewAdapter(this, mLSTCurrentWord,  mauTextTheoChuDe));
+
+        if (loaichudetheme.equals("White")) {
+            lv.setDivider(new ColorDrawable(Color.parseColor("#E6E6E6")));
+        } else if(loaichudetheme.equals("Pink")){
+            lv.setDivider(new ColorDrawable(Color.parseColor("#FFD1FF")));
+        }else if(loaichudetheme.equals("Love")){
+            lv.setDivider(new ColorDrawable(Color.parseColor("#FF6699")));
+        }
+        else {
+            lv.setDivider(new ColorDrawable(Color.parseColor("#000A00")));
+        }
+        lv.setDividerHeight(1);
 
         mLSTBookmack.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View v, int arg2, long arg3) {

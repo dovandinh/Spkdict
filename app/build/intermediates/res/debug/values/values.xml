@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/values/array.xml -->
+    <!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/values/array.xml -->
     <eat-comment/>
     <array name="lstLanguageCodes">
         <item>ar</item>
@@ -78,11 +78,11 @@
         <item>Ukranian</item>
         <item>Vietnamese</item>
     </array>
-    <!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/values/color.xml -->
+    <!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/values/color.xml -->
     <eat-comment/>
     <color name="black">#010100</color>
     <color name="maudemuc">#bfebfb</color>
-    <!-- From: file:/C:/Users/sakura/AndroidStudioProjects/Spkdict/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="LoiKhongThayTu">Không tìm thấy từ: </string>
     <string name="app_name">My dict</string>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/buttonclear" android:state_pressed="true" />
+    <item android:drawable="@drawable/buttonclear" android:state_focused="true" />
+    <item android:drawable="@drawable/buttonback2" />
+</selector><!-- From: file:/E:/ANDROID/Spkdict/app/src/main/res/drawable-mdpi/androidbuttonclear.xml -->
